@@ -1,0 +1,22 @@
+apiVersion: v1
+entries:
+  graph-node:
+  - apiVersion: v2
+    appVersion: v0.29.0
+    created: "2022-12-14T14:43:52.891703705Z"
+    description: Graph Node indexes data from blockchains such as Ethereum and serves
+      it over GraphQL
+    digest: 8a301d52c12c5af66c63dae406c55d44073089c736afba18bc7718ec78ab4d1c
+    home: https://thegraph.com/
+    keywords:
+    - graph-node
+    - GraphQL
+    - Ethereum
+    name: graph-node
+    sources:
+    - https://github.com/graphprotocol/graph-node
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/graph-node-0.1.1/graph-node-0.1.1.tgz
+    version: 0.1.1
+generated: "2022-12-14T14:43:52.891714205Z"
