@@ -14,5 +14,6 @@ data:
   ipfs: {{ .Values.graph.ipfsUrl | quote }}
   ethereum: {{ .Values.graph.ethereumNode | quote }}
   postgres_host: {{ .Values.postgresql.auth.hostname | default "graph-node-postgresql" | quote }}
+  postgres_port: {{ .Values.postgresql.auth.port | default "5432" | quote }}
   postgres_user: {{ .Values.postgresql.auth.username | quote }}
   postgres_db: {{ .Values.postgresql.auth.database | quote }}
