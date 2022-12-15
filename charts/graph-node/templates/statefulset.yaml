@@ -58,13 +58,22 @@ spec:
             - secretRef:
                 name: {{ template "common.names.fullname" . }}
             {{- end }}
-          {{- if .Values.postgresql.auth.existingSecret }}
+          {{- if or .Values.postgresql.auth.existingSecret .Values.ipfs.existingSecret }}
           env:
+            {{- if .Values.postgresql.auth.existingSecret }}
             - name: postgres_pass
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.postgresql.auth.existingSecret }}
                   key: {{ .Values.postgresql.auth.secretKeys.adminPasswordKey | default "postgres_pass" }}
+            {{- end }}
+            {{- if .Values.ipfs.existingSecret }}
+            - name: ipfs
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.ipfs.existingSecret }}
+                  key: {{ .Values.ipfs.secretKeys.url | default "ipfs_url" }}
+            {{- end }}
           {{- end }}
           ports:
             - name: http
