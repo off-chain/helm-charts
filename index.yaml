@@ -3,6 +3,36 @@ entries:
   graph-node:
   - apiVersion: v2
     appVersion: v0.29.0
+    created: "2022-12-15T22:50:42.690600111Z"
+    dependencies:
+    - name: common
+      repository: https://charts.stakewise.io/
+      version: 1.x.x
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami/
+      version: 12.1.4
+    - condition: ipfs.enabled
+      name: ipfs
+      repository: https://charts.stakewise.io/
+      version: 1.x.x
+    description: Graph Node indexes data from blockchains such as Ethereum and serves
+      it over GraphQL
+    digest: 3cb3f16fbbfb3356de436e62280bc5667b8c3e1c14997737f4c408281c6122c6
+    home: https://thegraph.com/
+    keywords:
+    - graph-node
+    - GraphQL
+    - Ethereum
+    name: graph-node
+    sources:
+    - https://github.com/graphprotocol/graph-node
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/graph-node-1.1.1/graph-node-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v2
+    appVersion: v0.29.0
     created: "2022-12-14T14:43:52.891703705Z"
     description: Graph Node indexes data from blockchains such as Ethereum and serves
       it over GraphQL
@@ -19,4 +49,4 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/graph-node-0.1.1/graph-node-0.1.1.tgz
     version: 0.1.1
-generated: "2022-12-14T14:43:52.891714205Z"
+generated: "2022-12-15T22:50:42.690613812Z"
