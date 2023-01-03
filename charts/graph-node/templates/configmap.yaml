@@ -14,6 +14,8 @@ data:
   {{- if not .Values.ipfs.existingSecret }}
   ipfs: {{ .Values.graph.ipfsUrl | quote }}
   {{- end }}
+  GRAPH_ALLOW_NON_DETERMINISTIC_IPFS: {{ .Values.graph.graphAllowNonDeterministicIpfs | quote }}
+  GRAPH_ALLOW_NON_DETERMINISTIC_FULLTEXT_SEARCH: {{ .Values.graph.graphAllowNonDeterministicFulltextSearch | quote }}
   ethereum: {{ .Values.graph.ethereumNode | quote }}
   postgres_host: {{ .Values.postgresql.auth.hostname | default "graph-node-postgresql" | quote }}
   postgres_port: {{ .Values.postgresql.auth.port | default "5432" | quote }}

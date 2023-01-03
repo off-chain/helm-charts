@@ -41,6 +41,8 @@ graph:
   # How many simultaneous connections to allow to the store.
   # Due to implementation details, this value may not be strictly adhered to
   storeConnectionPoolSize: 25
+  graphAllowNonDeterministicIpfs: 1
+  graphAllowNonDeterministicFulltextSearch: 1
 
 serviceAccount:
   # Specifies whether a service account should be created
