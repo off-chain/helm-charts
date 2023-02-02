@@ -241,4 +241,15 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/hype-client-1.0.0/hype-client-1.0.0.tgz
     version: 1.0.0
-generated: "2023-02-02T19:24:39.695115687Z"
+  wallet-api:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-02-02T20:14:55.109987224Z"
+    description: Wallet API app that allows user to log in using their Metamask wallet
+    digest: f6cea1562a7a3d12aaaef217842ba68e464805ed08a5ed68bba7cb83d9321c97
+    name: wallet-api
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/wallet-api-1.0.0/wallet-api-1.0.0.tgz
+    version: 1.0.0
+generated: "2023-02-02T20:14:55.110010926Z"
