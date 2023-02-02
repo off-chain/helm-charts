@@ -13,7 +13,5 @@ data:
   IPFS_SECRET: {{ .Values.app.ipfsSecret | quote }}
   IPFS_PROJECT_ID: {{ .Values.app.ipfsProjectId | quote }}
   IPFS_DEDICATED_GATEWAY: {{ .Values.app.ipfsDedicatedGateway | quote }}
-  DB_HOST: {{ .Values.app.dbHost | quote }}
   DB_PORT: {{ .Values.app.dbPort | quote }}
-  DB_USERNAME: {{ .Values.app.dbUsername | quote }}
   DB_DATABASE: {{ .Values.app.dbDatabase | quote }}

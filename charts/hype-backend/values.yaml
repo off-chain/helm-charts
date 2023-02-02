@@ -13,10 +13,7 @@ app:
   ipfsSecret: ""
   ipfsProjectId: ""
   ipfsDedicatedGateway: "https://hype-qa.infura-ipfs.io"
-  dbHost: 127.0.0.1
   dbPort: 5432
-  dbUsername: postgres
-  dbPassword: pass
   dbDatabase: postgres
 
 image:
