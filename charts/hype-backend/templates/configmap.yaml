@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "hype-backend.fullname" . }}
+  labels:
+    {{- include "hype-backend.labels" . | nindent 4 }}
+data:
+  SERVER_PORT: {{ .Values.service.port }}
+  PROVIDER: {{ .Values.app.provider | quote }}
+  WALLET_HOST: {{ .Values.app.walletHost | quote }}
+  HYPE_CONTRACT_ADDRESS: {{ .Values.app.hypeContractAddress | quote }}
+  ESCROW_CONTRACT_ADDRESS: {{ .Values.app.escrowContractAddress | quote }}
+  IPFS_SECRET: {{ .Values.app.ipfsSecret | quote }}
+  IPFS_PROJECT_ID: {{ .Values.app.ipfsProjectId | quote }}
+  IPFS_DEDICATED_GATEWAY: {{ .Values.app.ipfsDedicatedGateway | quote }}
+  DB_HOST: {{ .Values.app.dbHost | quote }}
+  DB_PORT: {{ .Values.app.dbPort | quote }}
+  DB_USERNAME: {{ .Values.app.dbUsername | quote }}
+  DB_DATABASE: {{ .Values.app.dbDatabase | quote }}
