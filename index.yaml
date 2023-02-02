@@ -172,6 +172,16 @@ entries:
   hype-backend:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-02-02T16:06:40.317454686Z"
+    description: The Hype app backend chart
+    digest: 3baa2f804d712d05a04b00e94366e5666b407971611ac25bbb2a60eacc07f2f4
+    name: hype-backend
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/hype-backend-1.0.1/hype-backend-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-02-02T15:56:23.187003205Z"
     description: The Hype app backend chart
     digest: e42feecd0ad814b88179c71f89f09412ee83754bbf1b3c12ccdbc564f16f0905
@@ -201,4 +211,4 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/hype-client-1.0.0/hype-client-1.0.0.tgz
     version: 1.0.0
-generated: "2023-02-02T16:05:36.902257829Z"
+generated: "2023-02-02T16:06:40.317745402Z"
