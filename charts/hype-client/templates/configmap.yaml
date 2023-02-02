@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "hype-client.fullname" . }}
+  labels:
+    {{- include "hype-client.labels" . | nindent 4 }}
+data:
+  API_HOST: {{ .Values.app.apiHost | quote }}
+  WALLET_HOST: {{ .Values.app.walletHost | quote }}
+  GRAPHQL_HOST: {{ .Values.app.graphqlHost | quote }}
+  HYPE_ADDRESS: {{ .Values.app.hypeAddress | quote }}
+  ESCROW_ADDRESS: {{ .Values.app.escrowAddress | quote }}
+  IPFS_HOST: {{ .Values.app.ipfsHost | quote }}
+  IPFS_PORT: {{ .Values.app.ipfsPort | quote }}
+  IPFS_PROTOCOL: {{ .Values.app.ipfsProtocol | quote }}
+  IPFS_USE_AUTH: {{ .Values.app.ipfsUseAuth | quote }}
