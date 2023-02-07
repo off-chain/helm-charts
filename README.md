@@ -5,6 +5,6 @@ A curated list of helm charts. Every chart is located in a separate folder and h
 ## TL;DR
 
 ```bash
-$ helm repo add off-chain https://off-chain.github.io/helm-charts
+$ helm repo add off-chain https://charts.offchain.ro/
 $ helm install my-release off-chain/<chart-name>
 ```

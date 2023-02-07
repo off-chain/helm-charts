@@ -28,6 +28,7 @@ jobs:
         run: |
           helm repo add bitnami https://charts.bitnami.com/bitnami/
           helm repo add stakewise https://charts.stakewise.io/
+          helm repo add off-chain https://charts.offchain.ro/
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.4.1
