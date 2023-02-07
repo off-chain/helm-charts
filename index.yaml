@@ -251,6 +251,27 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/hype-client-1.0.0/hype-client-1.0.0.tgz
     version: 1.0.0
+  ipfs:
+  - apiVersion: v2
+    appVersion: v0.17.0
+    created: "2023-02-07T19:40:17.045212544Z"
+    dependencies:
+    - name: common
+      repository: https://charts.stakewise.io/
+      version: 1.x.x
+    description: IPFS implementation in Go
+    digest: a74f506eb09bdfe77fe2a7dd6464cc0dd0c7c397ab839abc44f25e537c9d7682
+    home: https://ipfs.io
+    keywords:
+    - ipfs
+    - p2p
+    name: ipfs
+    sources:
+    - https://github.com/ipfs/go-ipfs
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/ipfs-1.1.0/ipfs-1.1.0.tgz
+    version: 1.1.0
   wallet-api:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -262,4 +283,4 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/wallet-api-1.0.0/wallet-api-1.0.0.tgz
     version: 1.0.0
-generated: "2023-02-07T19:38:20.805426932Z"
+generated: "2023-02-07T19:40:17.045601253Z"
