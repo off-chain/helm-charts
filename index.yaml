@@ -263,6 +263,16 @@ entries:
   hype-client:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-02-17T14:23:58.959078718Z"
+    description: The Hype app frontend chart
+    digest: ae2df7b4a507cc68a1e0d8a8bbc25bf4fcf7b22359927358fbc004451dec042b
+    name: hype-client
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/hype-client-1.0.3/hype-client-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-02-07T19:38:20.805388032Z"
     description: The Hype app frontend chart
     digest: cd7a9f7a45da67a295a6f7b2408772e1a37b973349fa084e5080806feff893f4
@@ -323,4 +333,4 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/wallet-api-1.0.0/wallet-api-1.0.0.tgz
     version: 1.0.0
-generated: "2023-02-17T14:21:29.369809116Z"
+generated: "2023-02-17T14:23:58.959122419Z"
