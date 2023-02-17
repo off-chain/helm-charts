@@ -10,8 +10,11 @@ data:
   WALLET_HOST: {{ .Values.app.walletHost | quote }}
   HYPE_CONTRACT_ADDRESS: {{ .Values.app.hypeContractAddress | quote }}
   ESCROW_CONTRACT_ADDRESS: {{ .Values.app.escrowContractAddress | quote }}
-  IPFS_SECRET: {{ .Values.app.ipfsSecret | quote }}
-  IPFS_PROJECT_ID: {{ .Values.app.ipfsProjectId | quote }}
-  IPFS_DEDICATED_GATEWAY: {{ .Values.app.ipfsDedicatedGateway | quote }}
   DB_PORT: {{ .Values.app.dbPort | quote }}
   DB_DATABASE: {{ .Values.app.dbDatabase | quote }}
+  IPFS_HOST: {{ .Values.app.ipfsHost | quote }}
+  IPFS_PORT: {{ .Values.app.ipfsPort | quote }}
+  IPFS_PROTOCOL: {{ .Values.app.ipfsProtocol | quote }}
+  IPFS_URL: {{ .Values.app.ipfsUrl | quote }}
+  IPFS_BASE_URL: {{ .Values.app.ipfsBaseUrl | quote }}
+  IPFS_USE_AUTH: {{ .Values.app.ipfsUseAuth | quote }}
