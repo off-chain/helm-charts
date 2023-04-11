@@ -11,3 +11,4 @@ data:
   HYPE_ADDRESS: {{ .Values.app.hypeAddress | quote }}
   ESCROW_ADDRESS: {{ .Values.app.escrowAddress | quote }}
   IPFS_BASE_URL: {{ .Values.app.ipfsBaseUrl | quote }}
+  TELEGRAM_BOT_NAME: {{ .Values.app.telegramBotName | quote }}
