@@ -335,6 +335,16 @@ entries:
   wallet-api:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-04-25T16:13:56.213230571Z"
+    description: Wallet API app that allows user to log in using their Metamask wallet
+    digest: 2f5c57e24f8035083dc63bab9056288897b79f792b084b7c4f87ea20eba8675d
+    name: wallet-api
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/wallet-api-1.0.1/wallet-api-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-02-02T20:14:55.109987224Z"
     description: Wallet API app that allows user to log in using their Metamask wallet
     digest: f6cea1562a7a3d12aaaef217842ba68e464805ed08a5ed68bba7cb83d9321c97
@@ -343,4 +353,4 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/wallet-api-1.0.0/wallet-api-1.0.0.tgz
     version: 1.0.0
-generated: "2023-04-11T19:19:37.4731387Z"
+generated: "2023-04-25T16:13:56.21326637Z"
