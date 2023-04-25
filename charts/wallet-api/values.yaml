@@ -7,6 +7,11 @@ replicaCount: 1
 app:
   dbPort: 5432
   dbDatabase: postgres
+  authJwtExpiry: "30 days"
+  authDomain: wallet.taraxa.io
+  authTosUrl: https://taraxa.io/privacy
+  authChainId: 841
+  authVersion: 1
 
 image:
   repository: taraxa/wallet-api

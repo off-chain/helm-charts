@@ -8,3 +8,8 @@ data:
   SERVER_PORT: {{ .Values.service.port | quote }}
   DB_PORT: {{ .Values.app.dbPort | quote }}
   DB_DATABASE: {{ .Values.app.dbDatabase | quote }}
+  JWT_EXPIRY_TIME: {{ .Values.app.authJwtExpiry | quote }}
+  AUTH_DOMAIN: {{ .Values.app.authDomain | quote }}
+  AUTH_TOS_URL: {{ .Values.app.authTosUrl | quote }}
+  AUTH_CHAIN_ID: {{ .Values.app.authChainId | quote }}
+  AUTH_VERSION: {{ .Values.app.authVersion | quote }}
