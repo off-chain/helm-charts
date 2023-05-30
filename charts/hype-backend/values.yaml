@@ -16,6 +16,7 @@ app:
   ipfsUrl: "https://ipfs.qa.hype.taraxa.io"
   ipfsBaseUrl: "https://gateway.qa.hype.taraxa.io/ipfs/"
   ipfsUseAuth: "false"
+  subgraphHost: "https://indexer.qa.hype.taraxa.io/subgraphs/name/taraxa/hype-pool"
   dbPort: 5432
   dbDatabase: postgres
 

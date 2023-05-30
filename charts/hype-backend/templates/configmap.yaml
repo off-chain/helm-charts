@@ -18,3 +18,4 @@ data:
   IPFS_URL: {{ .Values.app.ipfsUrl | quote }}
   IPFS_BASE_URL: {{ .Values.app.ipfsBaseUrl | quote }}
   IPFS_USE_AUTH: {{ .Values.app.ipfsUseAuth | quote }}
+  SUBGRAPH_HOST: {{ .Values.app.subgraphHost | quote }}
