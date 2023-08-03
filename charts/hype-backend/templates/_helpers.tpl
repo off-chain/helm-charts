@@ -43,10 +43,30 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
 {{/*
+Task Service labels
+*/}}
+{{- define "hype-backend-task-service.labels" -}}
+helm.sh/chart: {{ include "hype-backend.chart" . }}
+{{ include "hype-backend-task-service.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end }}
+
+{{/*
 Selector labels
 */}}
 {{- define "hype-backend.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "hype-backend.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
+Task Service Selector labels
+*/}}
+{{- define "hype-backend-task-service.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "hype-backend.name" . }}-task-service
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
