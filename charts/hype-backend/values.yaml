@@ -9,6 +9,7 @@ app:
   walletHost: "https://api-wallet.qa.hype.taraxa.io"
   hypeContractAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
   escrowContractAddress: "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+  echoContractAddress: "0x22B74CA2808BFD30C2FA64dEda0Cfe0D2Da07f0C"
   privateSigningKey: "0xc810b3c37ff6cf5c84b93d06967cae96c308f9e81ea3f86aa3f78f67a9c5c9ea"
   ipfsHost: "ipfs.qa.hype.taraxa.io"
   ipfsPort: "443"

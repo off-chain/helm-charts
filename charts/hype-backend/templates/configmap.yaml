@@ -10,6 +10,7 @@ data:
   WALLET_HOST: {{ .Values.app.walletHost | quote }}
   HYPE_CONTRACT_ADDRESS: {{ .Values.app.hypeContractAddress | quote }}
   ESCROW_CONTRACT_ADDRESS: {{ .Values.app.escrowContractAddress | quote }}
+  ECHO_CONTRACT: {{ .Values.app.echoContractAddress | quote }}
   DB_PORT: {{ .Values.app.dbPort | quote }}
   DB_DATABASE: {{ .Values.app.dbDatabase | quote }}
   IPFS_HOST: {{ .Values.app.ipfsHost | quote }}
