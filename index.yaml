@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  aquarius:
+  - apiVersion: v2
+    appVersion: 5.1.8
+    created: "2024-02-16T17:02:13.378214336Z"
+    description: Ocean Protocol Aquarius API
+    digest: c1863ad2eff0a8bceffc964ebbdd1cbdb4c691cf956ce0397ae1684accca1dc6
+    name: aquarius
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/aquarius-0.1.0/aquarius-0.1.0.tgz
+    version: 0.1.0
   graph-node:
   - apiVersion: v2
     appVersion: v0.29.0
@@ -383,4 +394,4 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/wallet-api-1.0.0/wallet-api-1.0.0.tgz
     version: 1.0.0
-generated: "2023-08-25T10:08:54.199765003Z"
+generated: "2024-02-16T17:02:13.378265995Z"
