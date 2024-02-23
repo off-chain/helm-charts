@@ -21,6 +21,7 @@ configEnvs:
   DB_VERIFY_CERTS: "false"
   LOG_LEVEL: INFO
   ADDRESS_FILE: /aquarius/addresses/address-01.json
+  NETWORK_NAME: taraxa_testnet
 
 secret:
   create: true
