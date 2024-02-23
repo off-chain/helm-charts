@@ -20,6 +20,7 @@ configEnvs:
   DB_SSL: "true"
   DB_VERIFY_CERTS: "false"
   LOG_LEVEL: INFO
+  ADDRESS_FILE: /aquarius/addresses/address-01.json
 
 secret:
   create: true
