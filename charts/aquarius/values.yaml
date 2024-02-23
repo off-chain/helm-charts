@@ -19,6 +19,7 @@ configEnvs:
   DB_SCHEME: https
   DB_SSL: "true"
   DB_VERIFY_CERTS: "false"
+  LOG_LEVEL: INFO
 
 secret:
   create: true

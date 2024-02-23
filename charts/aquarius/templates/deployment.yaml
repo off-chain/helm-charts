@@ -52,6 +52,13 @@ spec:
                 name: {{ include "aquarius.fullname" . }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: address
+              mountPath: /aquarius/addresses/address.json
+      volumes:
+        - name: address
+          configMap:
+            name: address
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
