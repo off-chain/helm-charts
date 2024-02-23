@@ -54,11 +54,14 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: address
-              mountPath: /aquarius/addresses/address-01.json
+              mountPath: /aquarius/addresses
       volumes:
         - name: address
           configMap:
             name: address
+            items:
+              - key: address.json
+                path: address-01.json
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
