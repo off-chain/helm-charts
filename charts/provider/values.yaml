@@ -10,7 +10,13 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v2.1.6"
 
-configEnvs: {}
+configEnvs:
+  LOG_LEVEL: INFO
+  IPFS_GATEWAY: ""
+  AQUARIUS_URL: https://aquarius.echo-social.io
+  NETWORK_URL: |
+    {"842":"https://rpc.testnet.taraxa.io"}
+        
 
 secret:
   create: true
