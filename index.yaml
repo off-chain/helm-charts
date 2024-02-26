@@ -423,6 +423,17 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/ipfs-1.1.0/ipfs-1.1.0.tgz
     version: 1.1.0
+  provider:
+  - apiVersion: v2
+    appVersion: 5.1.8
+    created: "2024-02-26T12:03:54.521759634Z"
+    description: Ocean Protocol Provider
+    digest: 3efbab21ef43851755b3a2f79e18d5d698ca375bb6862ba0215f0f487ea63f13
+    name: provider
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/provider-0.1.0/provider-0.1.0.tgz
+    version: 0.1.0
   wallet-api:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -444,4 +455,4 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/wallet-api-1.0.0/wallet-api-1.0.0.tgz
     version: 1.0.0
-generated: "2024-02-23T15:11:43.733647276Z"
+generated: "2024-02-26T12:03:54.521834705Z"
