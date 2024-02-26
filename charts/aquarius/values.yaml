@@ -29,6 +29,14 @@ configEnvs:
   OCEAN_ADDRESS: "0x7b01E240322319943A0084581ff4aaC1302d0F7c"
   SUBGRAPH_URLS: |
     {"842": "https://indexer.echo-social.io"}
+  ALLOWED_PUBLISHERS: '[""]'
+  METADATA_UPDATE_ALL: "0"
+  ASSET_PURGATORY_URL: https://raw.githubusercontent.com/oceanprotocol/list-purgatory/main/list-assets.json
+  ACCOUNT_PURGATORY_URL: https://raw.githubusercontent.com/oceanprotocol/list-purgatory/main/list-accounts.json
+  PURGATORY_UPDATE_INTERVAL: "60"
+  BLOCKS_CHUNK_SIZE: "3500"
+  EVENTS_HTTP: "1"
+  EVENTS_ALLOW: "1"
 
 secret:
   create: true
