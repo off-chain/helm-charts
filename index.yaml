@@ -476,6 +476,16 @@ entries:
   provider:
   - apiVersion: v2
     appVersion: 5.1.8
+    created: "2024-02-26T19:10:53.390707001Z"
+    description: Ocean Protocol Provider
+    digest: a1765f4cc9485efbd855f3d14a92491ff6bf0b61f57b2c3356d14411955269f4
+    name: provider
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/provider-0.1.4/provider-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 5.1.8
     created: "2024-02-26T14:09:04.25168876Z"
     description: Ocean Protocol Provider
     digest: a009f442c6dc25dba42aa05e38fb0ddf4461c7d51ba005fedbe3ce14f4e6fc25
@@ -535,4 +545,4 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/wallet-api-1.0.0/wallet-api-1.0.0.tgz
     version: 1.0.0
-generated: "2024-02-26T19:01:45.967219459Z"
+generated: "2024-02-26T19:10:53.390784025Z"
