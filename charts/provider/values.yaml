@@ -5,15 +5,19 @@
 replicaCount: 1
 
 image:
-  repository: oceanprotocol/provider
+  repository: oceanprotocol/provider-py
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v5.1.8"
+  tag: "v2.1.6"
 
 configEnvs: {}
 
 secret:
   create: true
+  redis:
+    create: true
+    secretRef: prod-redis
+    secretKey: "uri"
  
 secretEnvs: {}
 

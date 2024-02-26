@@ -50,6 +50,14 @@ spec:
                 name: {{ include "provider.fullname" . }}
             - secretRef:
                 name: {{ include "provider.fullname" . }}
+          {{ if not .Values.secret.redis.create }}
+          env:
+            - name: REDIS_CONNECTION
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.secret.redis.secretRef }}
+                  key: {{ .Values.secret.redis.secretKey }}
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
