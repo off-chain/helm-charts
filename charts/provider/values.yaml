@@ -14,10 +14,8 @@ configEnvs:
   LOG_LEVEL: INFO
   IPFS_GATEWAY: ""
   AQUARIUS_URL: https://aquarius.echo-social.io
-  NETWORK_URL: |
-    {"842":"https://rpc.testnet.taraxa.io"}
+  NETWORK_URL: https://rpc.testnet.taraxa.io
         
-
 secret:
   create: true
   redis:

@@ -26,6 +26,7 @@ configEnvs:
   RUN_AQUARIUS_SERVER: "1"
   NETWORK_NAME: taraxa_testnet
   EVENTS_RPC: https://rpc.testnet.taraxa.io
+  OCEAN_ADDRESS: "0x7b01E240322319943A0084581ff4aaC1302d0F7c"
 
 secret:
   create: true
