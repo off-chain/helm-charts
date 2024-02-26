@@ -30,13 +30,14 @@ configEnvs:
   SUBGRAPH_URLS: |
     {"842": "https://indexer.echo-social.io"}
   ALLOWED_PUBLISHERS: '[""]'
-  METADATA_UPDATE_ALL: "0"
+  METADATA_UPDATE_ALL: "1"
   ASSET_PURGATORY_URL: https://raw.githubusercontent.com/oceanprotocol/list-purgatory/main/list-assets.json
   ACCOUNT_PURGATORY_URL: https://raw.githubusercontent.com/oceanprotocol/list-purgatory/main/list-accounts.json
   PURGATORY_UPDATE_INTERVAL: "60"
   BLOCKS_CHUNK_SIZE: "3500"
   EVENTS_HTTP: "1"
   EVENTS_ALLOW: "1"
+  AQUARIUS_WORKERS: "4"
 
 secret:
   create: true
