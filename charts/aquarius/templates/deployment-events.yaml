@@ -42,8 +42,6 @@ spec:
               value: "0"
             - name: RUN_EVENTS_MONITOR
               value: "1"
-            - name: AQUARIUS_WORKERS
-              value: "1"
             - name: BLOCKS_CHUNK_SIZE
               value: "1"
           envFrom:

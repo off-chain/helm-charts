@@ -54,6 +54,8 @@ spec:
               value: /aquarius/addresses/addresses.json
             - name: RUN_AQUARIUS_SERVER
               value: "1"
+            - name: AQUARIUS_WORKERS
+              value: "1"
             - name: RUN_EVENTS_MONITOR
               value: "0"
             - name: EVENTS_ALLOW
