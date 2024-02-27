@@ -10,6 +10,17 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v5.1.8"
 
+addresses:
+  taraxa_testnet:
+      DTFactory: "0xEF23D3313E8fF915Ec078138F7c7Bb96c3C3D5de"
+      BFactory: "0x6021DD6A17d65ccdD4C3B40f25359BAd9b5e198E"
+      FixedRateExchange: "0x9aAA9692e1b2a284877Ecbd53597dB4C8aA2888D"
+      Metadata: "0xEF23D3313E8fF915Ec078138F7c7Bb96c3C3D5de"
+      Ocean: "0x7b01E240322319943A0084581ff4aaC1302d0F7c"
+      Dispenser: "0x69814e3129b8a2AED940F3BB0CEC910d316B603D"
+      chainId: 842
+      startBlock: 25277
+
 configEnvs:
   # elasticsearch
   DB_HOSTNAME: https://elasticsearch-master
