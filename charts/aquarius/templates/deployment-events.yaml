@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "aquarius.fullname" . }}
+  name: {{ include "aquarius.fullname" . }}-events
   labels:
-    {{- include "aquarius.labels" . | nindent 4 }}
+    {{- include "aquarius.events.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "aquarius.selectorLabels" . | nindent 6 }}
+      {{- include "aquarius.events.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,7 +18,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "aquarius.selectorLabels" . | nindent 8 }}
+        {{- include "aquarius.events.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -33,33 +33,19 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          ports:
-            - name: http
-              containerPort: {{ .Values.service.port }}
-              protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
-            initialDelaySeconds: 60
-            periodSeconds: 10
           env:
             - name: ADDRESS_FILE
               value: /aquarius/addresses/addresses.json
-            - name: RUN_AQUARIUS_SERVER
+            - name: EVENTS_HTTP
               value: "1"
+            - name: RUN_AQUARIUS_SERVER
+              value: "0"
             - name: RUN_EVENTS_MONITOR
-              value: "0"
-            - name: EVENTS_ALLOW
-              value: "0"
-            - name: ALLOWED_PUBLISHERS
-              value: '[""]'
+              value: "1"
+            - name: AQUARIUS_WORKERS
+              value: "1"
+            - name: BLOCKS_CHUNK_SIZE
+              value: "1"
           envFrom:
             - configMapRef:
                 name: {{ include "aquarius.fullname" . }}

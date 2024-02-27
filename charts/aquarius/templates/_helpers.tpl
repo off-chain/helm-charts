@@ -51,6 +51,26 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
+Common Events labels
+*/}}
+{{- define "aquarius.events.labels" -}}
+helm.sh/chart: {{ include "aquarius.chart" . }}
+{{ include "aquarius.events.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end }}
+
+{{/*
+Selector Events labels
+*/}}
+{{- define "aquarius.events.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "aquarius.name" . }}-events
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
 Create the name of the service account to use
 */}}
 {{- define "aquarius.serviceAccountName" -}}
