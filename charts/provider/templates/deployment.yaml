@@ -64,16 +64,6 @@ spec:
           {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          volumeMounts:
-            - name: address
-              mountPath: /provider/addresses
-      volumes:
-        - name: address
-          configMap:
-            name: address
-            items:
-              - key: address.json
-                path: address-01.json
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
