@@ -64,6 +64,16 @@ spec:
           {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: addresses
+              mountPath: /provider/addresses/addresses.json
+              readOnly: true
+              subPath: addresses.json
+      volumes:
+        - name: addresses
+          configMap:
+            name: {{ include "provider.fullname" . }}-addresses
+            defaultMode: 0700
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

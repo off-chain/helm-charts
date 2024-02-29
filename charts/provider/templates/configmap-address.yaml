@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "provider.fullname" . }}-addresses
+  labels:
+    {{- include "provider.labels" . | nindent 4 }}
+data:
+  addresses.json: |-
+    {{ .Values.addresses | toJson }}

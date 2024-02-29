@@ -10,11 +10,29 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v2.1.6"
 
+
+addresses:
+  taraxa_testnet:
+    chainId: 842
+    Ocean": "0x7b01E240322319943A0084581ff4aaC1302d0F7c"
+    OPFCommunityFeeCollector: "0xe90291889ebADd2069f18ae8dC9c4Ef610c6C23F"
+    startBlock: 25277
+    Router: "0x6021DD6A17d65ccdD4C3B40f25359BAd9b5e198E"
+    FixedPrice: "0x9aAA9692e1b2a284877Ecbd53597dB4C8aA2888D"
+    ERC20Template:
+      "1": "0x920C822FA712E80d1a89C130580c4785be987FC7"
+      "2": "0xF2d3BbCE7d3B902374de54969A9F4933116BC892"
+    ERC721Template:
+      "1": "0xfF978d75c81F1be28B43c7686abfda953D82b4c9"
+    Dispenser: "0x69814e3129b8a2AED940F3BB0CEC910d316B603D"
+    ERC721Factory: "0xEF23D3313E8fF915Ec078138F7c7Bb96c3C3D5de"
+
 configEnvs:
   LOG_LEVEL: INFO
   IPFS_GATEWAY: ""
   AQUARIUS_URL: https://aquarius.echo-social.io
   NETWORK_URL: https://rpc.testnet.taraxa.io
+  ADDRESS_FILE: /provider/addresses/addresses.json
         
 secret:
   create: true
