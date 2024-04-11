@@ -526,6 +526,16 @@ entries:
   market:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-04-11T13:07:41.524928778Z"
+    description: Ocean Protocol Market
+    digest: 3204bae19172f185df6356d6764bb07f411e86e2935a5765416ddc4005787cd4
+    name: market
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/market-0.1.2/market-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-04-11T12:10:53.250778417Z"
     description: Ocean Protocol Market
     digest: a50f9d60781e893f67b5624422f9da8900380c64580750b8be3a9ad2d5a88541
@@ -636,4 +646,4 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/wallet-api-1.0.0/wallet-api-1.0.0.tgz
     version: 1.0.0
-generated: "2024-04-11T12:10:53.250911354Z"
+generated: "2024-04-11T13:07:41.525019497Z"
