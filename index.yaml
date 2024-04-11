@@ -523,6 +523,17 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/ipfs-1.1.0/ipfs-1.1.0.tgz
     version: 1.1.0
+  market:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-04-11T11:36:35.918980454Z"
+    description: Ocean Protocol Market
+    digest: df250bab84739ceb01a5b555d2e0e4496c3b17400a0cafb13771858bdb62be0f
+    name: market
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/market-0.1.0/market-0.1.0.tgz
+    version: 0.1.0
   provider:
   - apiVersion: v2
     appVersion: 5.1.8
@@ -615,4 +626,4 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/wallet-api-1.0.0/wallet-api-1.0.0.tgz
     version: 1.0.0
-generated: "2024-02-29T09:46:43.848251973Z"
+generated: "2024-04-11T11:36:35.919359308Z"
