@@ -1,0 +1,100 @@
+# Default values for aquarius.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: echosocial/market
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "feature-taraxa_testnet"
+
+configEnvs:
+  NEXT_PUBLIC_NFT_FACTORY_ADDRESS: "0xEF23D3313E8fF915Ec078138F7c7Bb96c3C3D5de"
+  NEXT_PUBLIC_OPF_COMMUNITY_FEE_COLECTOR: "0xe90291889ebADd2069f18ae8dC9c4Ef610c6C23F"
+  NEXT_PUBLIC_FIXED_RATE_EXCHANGE_ADDRESS: "0xDBDa486d8fE29F75e9Ca858F438b380Fc14b1232"
+  NEXT_PUBLIC_DISPENSER_ADDRESS: "0x2112Eb973af1DBf83a4f11eda82f7a7527D7Fde5"
+  NEXT_PUBLIC_OCEAN_TOKEN_ADDRESS: "0x7b01E240322319943A0084581ff4aaC1302d0F7c"
+  # NEXT_PUBLIC_MARKET_DEVELOPMENT: "true"
+  NEXT_PUBLIC_PROVIDER_URL: https://provider.echo-social.io
+  NEXT_PUBLIC_SUBGRAPH_URI: https://indexer.echo-social.io
+  NEXT_PUBLIC_METADATACACHE_URI: https://aquarius.echo-social.io
+  NEXT_PUBLIC_RPC_URI: https://rpc.testnet.taraxa.io
+
+secretEnvs: {}
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext:
+  {}
+  # fsGroup: 2000
+
+securityContext:
+  {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: false
+  className: ""
+  annotations:
+    {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources:
+  {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
