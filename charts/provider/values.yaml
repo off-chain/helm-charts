@@ -14,7 +14,7 @@ image:
 addresses:
   taraxa_testnet:
     chainId: 842
-    Ocean": "0x7b01E240322319943A0084581ff4aaC1302d0F7c"
+    Ocean: "0x7b01E240322319943A0084581ff4aaC1302d0F7c"
     OPFCommunityFeeCollector: "0xe90291889ebADd2069f18ae8dC9c4Ef610c6C23F"
     startBlock: 25277
     Router: "0x6021DD6A17d65ccdD4C3B40f25359BAd9b5e198E"
