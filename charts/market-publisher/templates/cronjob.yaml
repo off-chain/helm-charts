@@ -1,0 +1,44 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: market-publisher
+spec:
+  schedule: "0 8 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: {{ .Chart.Name }}
+              securityContext:
+                {{- toYaml .Values.securityContext | nindent 16 }}
+              image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+              imagePullPolicy: {{ .Values.image.pullPolicy }}
+              envFrom:
+                - configMapRef:
+                  name: {{ include "market-publisher.fullname" . }}
+                - secretRef:
+                  name: {{ include "market-publisher.fullname" . }}
+              volumeMounts:
+                - name: addresses
+                  mountPath: /app/addresses/addresses.json
+                  readOnly: true
+                  subPath: addresses.json
+              restartPolicy: OnFailure
+          volumes:
+            - name: addresses
+              configMap:
+              name: {{ include "market-publisher.fullname" . }}-addresses
+              defaultMode: 0700
+          {{- with .Values.nodeSelector }}
+          nodeSelector:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}
+          {{- with .Values.affinity }}
+          affinity:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}
+          {{- with .Values.tolerations }}
+          tolerations:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}

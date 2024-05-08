@@ -1,0 +1,120 @@
+# Default values for aquarius.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: echosocial/market-publish
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "main"
+
+addresses:
+  taraxa_testnet:
+    chainId: 842
+    Ocean: "0x1e1173c2a9096bd489181c171b5be53f3367c8b9"
+    OPFCommunityFeeCollector: "0xe90291889ebADd2069f18ae8dC9c4Ef610c6C23F"
+    startBlock: 25277
+    Router: "0x6021DD6A17d65ccdD4C3B40f25359BAd9b5e198E"
+    FixedPrice: "0x9aAA9692e1b2a284877Ecbd53597dB4C8aA2888D"
+    ERC20Template:
+      "1": "0x920C822FA712E80d1a89C130580c4785be987FC7"
+      "2": "0xF2d3BbCE7d3B902374de54969A9F4933116BC892"
+    ERC721Template:
+      "1": "0xfF978d75c81F1be28B43c7686abfda953D82b4c9"
+    Dispenser: "0x69814e3129b8a2AED940F3BB0CEC910d316B603D"
+    ERC721Factory: "0xEF23D3313E8fF915Ec078138F7c7Bb96c3C3D5de"
+
+configEnvs:
+  ECHO_RPC_ENDPOINT: https://rpc.mainnet.taraxa.io
+  ECHO_CONTRACT_ADDRESS: "0x22B74CA2808BFD30C2FA64dEda0Cfe0D2Da07f0C"
+  ECHO_CONTRACT_ABI_DIR: /app/src
+  MARKET_RPC_ENDPOINT: https://rpc.testnet.taraxa.io
+  IPFS_URI: https://ipfs.infura.io:5001
+  ADDRESS_FILE: /app/addresses/address.json
+  PUBLISH_GAS_PRICE: "10000"
+  DATASET_PRICE: "120"
+
+secret:
+  create: true
+
+secretEnvs:
+  PUBLISHER_PRIVATE_KEY: ""
+  IPFS_USERNAME: ""
+  IPFS_PASSWORD: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext:
+  {}
+  # fsGroup: 2000
+
+securityContext:
+  {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 8030
+
+ingress:
+  enabled: false
+  className: ""
+  annotations:
+    {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources:
+  {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
