@@ -16,15 +16,15 @@ spec:
               imagePullPolicy: {{ .Values.image.pullPolicy }}
               envFrom:
                 - configMapRef:
-                  name: {{ include "market-publisher.fullname" . }}
+                    name: {{ include "market-publisher.fullname" . }}
                 - secretRef:
-                  name: {{ include "market-publisher.fullname" . }}
+                    name: {{ include "market-publisher.fullname" . }}
               volumeMounts:
                 - name: addresses
                   mountPath: /app/addresses/addresses.json
                   readOnly: true
                   subPath: addresses.json
-              restartPolicy: OnFailure
+          restartPolicy: OnFailure
           volumes:
             - name: addresses
               configMap:
