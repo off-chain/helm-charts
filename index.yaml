@@ -577,6 +577,16 @@ entries:
   market-publisher:
   - apiVersion: v2
     appVersion: 0.1.0
+    created: "2024-05-13T07:07:39.296789957Z"
+    description: Ocean Protocol market-publisher
+    digest: a2a9a2da0e66e96edb28a2d18abcf9018a6bc59815a4306fda6612ad87732fdd
+    name: market-publisher
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/market-publisher-0.1.1/market-publisher-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.1.0
     created: "2024-05-08T10:34:18.46178621Z"
     description: Ocean Protocol market-publisher
     digest: e8b4fd2a3d0b3d1c9d1f529174d5431f6a9725c4440b00da41f0f16bb7e47edb
@@ -707,4 +717,4 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/wallet-api-1.0.0/wallet-api-1.0.0.tgz
     version: 1.0.0
-generated: "2024-05-08T10:34:18.461948103Z"
+generated: "2024-05-13T07:07:39.296898891Z"
