@@ -28,8 +28,8 @@ spec:
           volumes:
             - name: addresses
               configMap:
-              name: {{ include "market-publisher.fullname" . }}-addresses
-              defaultMode: 0700
+                name: {{ include "market-publisher.fullname" . }}-addresses
+                defaultMode: 0700
           {{- with .Values.nodeSelector }}
           nodeSelector:
             {{- toYaml . | nindent 8 }}
