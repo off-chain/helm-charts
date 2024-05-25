@@ -1,0 +1,69 @@
+# Default values for hummingbot.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: hummingbot/hummingbot
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: { }
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+secrets:
+  enabled: true
+  # The password to use for the quickstart
+  password: ""
+
+podAnnotations: { }
+
+podSecurityContext:
+  fsGroup: 1000
+
+securityContext:
+  capabilities:
+    drop:
+      - ALL
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 1000
+
+resources: { }
+#  limits:
+#    cpu: 2
+#    memory: 1.5Gi
+#  requests:
+#    cpu: 1
+#    memory: 3Gi
+
+nodeSelector: { }
+
+tolerations: []
+
+affinity: { }
+
+persistence:
+  config:
+    size: 1Gi
+  logs:
+    size: 1Gi
+
+quickstart:
+  enabled: false
+  config:
+    # Write your config lines here
+    template_version: 22
+    strategy: pure_market_making
