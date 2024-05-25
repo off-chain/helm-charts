@@ -4,4 +4,4 @@ description: A Helm chart for Hummingbot
 icon: https://docs.hummingbot.io/assets/img/logo.png
 name: hummingbot
 type: application
-version: 0.2.1
+version: 0.2.2

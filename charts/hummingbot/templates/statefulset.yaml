@@ -39,8 +39,10 @@ spec:
             - -c
             - >
               {{ if .Values.quickstart.enabled}}cp /quickstart.yml /conf/ ; {{ end -}}
-              /opt/conda/condabin/conda activate hummingbot ;
-              ./bin/hummingbot_quickstart.py -p $PASSWORD -f /conf/quickstart.yml 2>> /logs/errors.log
+              source /opt/conda/etc/profile.d/conda.sh ;
+              conda activate hummingbot ;
+              ./bin/hummingbot_quickstart.py
+              -p $PASSWORD -f /conf/quickstart.yml 2>> /logs/errors.log
           envFrom:
             - secretRef:
                 name: {{ include "hummingbot.fullname" . }}
