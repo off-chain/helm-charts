@@ -360,6 +360,18 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/graph-node-0.1.1/graph-node-0.1.1.tgz
     version: 0.1.1
+  hummingbot:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-05-25T15:31:26.517067169Z"
+    description: A Helm chart for Hummingbot
+    digest: a9f38c32f29c54f5d791b1ea91b98a1e68bdc0232f7ed89390d711836c7cb81f
+    icon: https://docs.hummingbot.io/assets/img/logo.png
+    name: hummingbot
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/hummingbot-0.2.0/hummingbot-0.2.0.tgz
+    version: 0.2.0
   hype-backend:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -727,4 +739,4 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/wallet-api-1.0.0/wallet-api-1.0.0.tgz
     version: 1.0.0
-generated: "2024-05-13T12:14:50.017717487Z"
+generated: "2024-05-25T15:31:26.517177334Z"
