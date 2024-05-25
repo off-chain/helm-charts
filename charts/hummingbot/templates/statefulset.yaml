@@ -39,7 +39,7 @@ spec:
             - -c
             - >
               {{ if .Values.quickstart.enabled}}cp /quickstart.yml /conf/ ; {{ end -}}
-              conda activate hummingbot &&
+              /opt/conda/condabin/conda activate hummingbot ;
               ./bin/hummingbot_quickstart.py -p $PASSWORD -f /conf/quickstart.yml 2>> /logs/errors.log
           envFrom:
             - secretRef:
