@@ -363,6 +363,17 @@ entries:
   hummingbot:
   - apiVersion: v2
     appVersion: latest
+    created: "2024-05-25T16:58:39.456337969Z"
+    description: A Helm chart for Hummingbot
+    digest: e4ab96a894783239e9cc2cf7177126d8db42c928fa2d1b9210cb9cb9d23d4186
+    icon: https://docs.hummingbot.io/assets/img/logo.png
+    name: hummingbot
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/hummingbot-0.2.1/hummingbot-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: latest
     created: "2024-05-25T15:31:26.517067169Z"
     description: A Helm chart for Hummingbot
     digest: a9f38c32f29c54f5d791b1ea91b98a1e68bdc0232f7ed89390d711836c7cb81f
@@ -739,4 +750,4 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/wallet-api-1.0.0/wallet-api-1.0.0.tgz
     version: 1.0.0
-generated: "2024-05-25T15:31:26.517177334Z"
+generated: "2024-05-25T16:58:39.456455499Z"
