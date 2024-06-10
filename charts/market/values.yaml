@@ -8,7 +8,7 @@ image:
   repository: echosocial/market
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "feature-taraxa_testnet"
+  tag: "main"
 
 configEnvs:
   NEXT_PUBLIC_NFT_FACTORY_ADDRESS: "0xEF23D3313E8fF915Ec078138F7c7Bb96c3C3D5de"
