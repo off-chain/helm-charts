@@ -10,7 +10,6 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v2.1.6"
 
-
 addresses:
   taraxa_testnet:
     chainId: 842
@@ -26,21 +25,35 @@ addresses:
       "1": "0xfF978d75c81F1be28B43c7686abfda953D82b4c9"
     Dispenser: "0x69814e3129b8a2AED940F3BB0CEC910d316B603D"
     ERC721Factory: "0xEF23D3313E8fF915Ec078138F7c7Bb96c3C3D5de"
+  taraxa_mainnet:
+    chainId: 841
+    Ocean: "0x24a4a0a8d076ACB3647763a9dAE6Da7081511CD1"
+    OPFCommunityFeeCollector: "0xd921852Da282884C5F3c98A9C65Ff8F54D2aEAE2"
+    startBlock: 10221056
+    Router: "0xd52BC2EA1517503038f51b7adc3e7393340bf264"
+    FixedPrice: "0x32e9AD3E1Ab23B0594a2f5E1cC19CAF987e48986"
+    ERC20Template:
+      "1": "0x001700767038CbfbBd567e1804093Ce05DA4f730"
+      "2": "0x1c16cd1Cb148D589003B00923737b3f15F6ec54b"
+    ERC721Template:
+      "1": "0xA58A443710a217E4942bF78ad9f19d06F79748f3"
+    Dispenser: "0x9E06F70E09d1Bd03dDb217fCE58654959D652e43"
+    ERC721Factory: "0x105Dce66A17529029Fcb3cdaCDee12B9B72B26ef"
 
 configEnvs:
   LOG_LEVEL: INFO
   IPFS_GATEWAY: ""
   AQUARIUS_URL: https://aquarius.echo-social.io
-  NETWORK_URL: https://rpc.testnet.taraxa.io
+  NETWORK_URL: https://rpc.mainnet.taraxa.io
   ADDRESS_FILE: /provider/addresses/addresses.json
-        
+
 secret:
   create: true
   redis:
     create: true
     secretRef: prod-redis
     secretKey: "uri"
- 
+
 secretEnvs: {}
 
 imagePullSecrets: []
@@ -58,10 +71,12 @@ serviceAccount:
 
 podAnnotations: {}
 
-podSecurityContext: {}
+podSecurityContext:
+  {}
   # fsGroup: 2000
 
-securityContext: {}
+securityContext:
+  {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -76,7 +91,8 @@ service:
 ingress:
   enabled: false
   className: ""
-  annotations: {}
+  annotations:
+    {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
@@ -89,7 +105,8 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: {}
+resources:
+  {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
