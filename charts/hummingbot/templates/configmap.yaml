@@ -1,0 +1,9 @@
+{{- if .Values.quickstart.enabled -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-quickstart
+data:
+  quickstart.yml: |
+{{ .Values.quickstart.config | toYaml | indent 4}}
+{{- end -}}

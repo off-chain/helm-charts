@@ -1,0 +1,102 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "hummingbot.fullname" . }}
+  labels:
+  {{- include "hummingbot.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  serviceName: {{ include "hummingbot.fullname" . }}
+  selector:
+    matchLabels:
+  {{- include "hummingbot.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+    {{- include "hummingbot.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "hummingbot.serviceAccountName" . }}
+      securityContext:
+      {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+          {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          tty: true
+          stdin: true
+          command: [/bin/bash]
+          args:
+            - -c
+            - >
+              {{ if .Values.quickstart.enabled}}cp /quickstart.yml /conf/ ; {{ end -}}
+              source /opt/conda/etc/profile.d/conda.sh ;
+              conda activate hummingbot ;
+              ./bin/hummingbot_quickstart.py
+              -p $PASSWORD -f /conf/quickstart.yml 2>> /logs/errors.log
+          envFrom:
+            - secretRef:
+                name: {{ include "hummingbot.fullname" . }}
+          volumeMounts:
+            - mountPath: /data
+              name: {{ include "hummingbot.fullname" . }}-config
+              subPath: data
+            - mountPath: /conf
+              name: {{ include "hummingbot.fullname" . }}-config
+              subPath: conf
+            - mountPath: /scripts
+              name: {{ include "hummingbot.fullname" . }}-config
+              subPath: scripts
+            - mountPath: /logs
+              name: {{ include "hummingbot.fullname" . }}-logs
+            {{- if .Values.quickstart.enabled }}
+            - name: quickstart-config
+              mountPath: /quickstart.yml
+              subPath: quickstart.yml
+            {{- end }}
+          resources:
+      {{- toYaml .Values.resources | nindent 12 }}
+      {{- if .Values.quickstart.enabled }}
+      volumes:
+        - name: quickstart-config
+          configMap:
+           name: {{ .Release.Name }}-quickstart
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+      {{- toYaml . | nindent 8 }}
+  {{- end }}
+  volumeClaimTemplates:
+    - metadata:
+        name: {{ include "hummingbot.fullname" . }}-config
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: {{ .Values.persistence.config.size | default "4Gi" }}
+    - metadata:
+        name: {{ include "hummingbot.fullname" . }}-logs
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: {{ .Values.persistence.logs.size | default "4Gi" }}
