@@ -12,14 +12,14 @@ image:
 
 addresses:
   taraxa_testnet:
-      DTFactory: "0xEF23D3313E8fF915Ec078138F7c7Bb96c3C3D5de"
-      BFactory: "0x6021DD6A17d65ccdD4C3B40f25359BAd9b5e198E"
-      FixedRateExchange: "0x9aAA9692e1b2a284877Ecbd53597dB4C8aA2888D"
-      Metadata: "0xEF23D3313E8fF915Ec078138F7c7Bb96c3C3D5de"
-      Ocean: "0x7b01E240322319943A0084581ff4aaC1302d0F7c"
-      Dispenser: "0x69814e3129b8a2AED940F3BB0CEC910d316B603D"
-      chainId: 842
-      startBlock: 25277
+    DTFactory: "0xEF23D3313E8fF915Ec078138F7c7Bb96c3C3D5de"
+    BFactory: "0x6021DD6A17d65ccdD4C3B40f25359BAd9b5e198E"
+    FixedRateExchange: "0x9aAA9692e1b2a284877Ecbd53597dB4C8aA2888D"
+    Metadata: "0xEF23D3313E8fF915Ec078138F7c7Bb96c3C3D5de"
+    Ocean: "0x7b01E240322319943A0084581ff4aaC1302d0F7c"
+    Dispenser: "0x69814e3129b8a2AED940F3BB0CEC910d316B603D"
+    chainId: 842
+    startBlock: 25277
 
 configEnvs:
   # elasticsearch
@@ -35,7 +35,7 @@ configEnvs:
   EVENTS_RPC: https://rpc.testnet.taraxa.io
   OCEAN_ADDRESS: "0x7b01E240322319943A0084581ff4aaC1302d0F7c"
   SUBGRAPH_URLS: |
-    {"842": "https://indexer.echo-social.io"}
+    {"842": "https://indexer.echo-social.io", "841": "https://indexer.echo-social.io"}
   METADATA_UPDATE_ALL: "1"
   ASSET_PURGATORY_URL: https://raw.githubusercontent.com/oceanprotocol/list-purgatory/main/list-assets.json
   ACCOUNT_PURGATORY_URL: https://raw.githubusercontent.com/oceanprotocol/list-purgatory/main/list-accounts.json
@@ -43,7 +43,7 @@ configEnvs:
 
 secret:
   create: true
- 
+
 secretEnvs:
   # elasticsearch
   DB_USERNAME: ""
@@ -64,10 +64,12 @@ serviceAccount:
 
 podAnnotations: {}
 
-podSecurityContext: {}
+podSecurityContext:
+  {}
   # fsGroup: 2000
 
-securityContext: {}
+securityContext:
+  {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -82,7 +84,8 @@ service:
 ingress:
   enabled: false
   className: ""
-  annotations: {}
+  annotations:
+    {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
@@ -95,7 +98,8 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: {}
+resources:
+  {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
