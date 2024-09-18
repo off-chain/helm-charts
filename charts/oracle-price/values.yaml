@@ -1,0 +1,114 @@
+# Default values for aquarius.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: echosocial/oracle-price
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "main"
+
+configEnvs:
+  ACCOUNT_MAX_GAS_PRICE: 10000
+  PRICE_API_URI: "https://api.coingecko.com/api/v3"
+  PRICE_API_COIN_ID_0: "taraxa"
+  PRICE_API_COIN_ID_1: "ethereum"
+  PRICE_API_COIN_VS_CURRENCY: "usd"
+  PRICE_API_TIMEOUT: 15
+  GAS_API_URI: "https://gas.api.infura.io"
+  GAS_API_NETWORK_ID: 1
+  GAS_API_TIMEOUT: 15
+  RPC_ENDPOINT: "https://rpc.testnet.taraxa.io"
+  CONTRACT_PRICE_ABI_FILE: "/app/src/Price.json"
+  CONTRACT_PRICE_ADDRESS_0: ""
+  CONTRACT_PRICE_ADDRESS_1: ""
+  PRICE_DECIMALS: 8
+  CONTRACT_GAS_ABI_FILE: "/app/src/Gas.json"
+  CONTRACT_GAS_ADDRESS: ""
+  GAS_DECIMALS: 18
+  LOG_LEVEL: "INFO"
+
+secret:
+  create: true
+
+secretEnvs:
+  ACCOUNT_PRIVATE_KEY: ""
+  GAS_API_USERNAME: ""
+  GAS_API_PASSWORD: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext:
+  {}
+  # fsGroup: 2000
+
+securityContext:
+  {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 8030
+
+ingress:
+  enabled: false
+  className: ""
+  annotations:
+    {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources:
+  {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
