@@ -682,6 +682,16 @@ entries:
   oracle-price:
   - apiVersion: v2
     appVersion: 0.1.0
+    created: "2024-09-19T11:58:31.535754611Z"
+    description: Price and Gas Oracle
+    digest: 40c1138d20bbc6b5786cf1dc38327f6fdb5b3c186f27abae4b1395c960272964
+    name: oracle-price
+    type: application
+    urls:
+    - https://github.com/off-chain/helm-charts/releases/download/oracle-price-0.1.3/oracle-price-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 0.1.0
     created: "2024-09-19T11:53:54.727632085Z"
     description: Price and Gas Oracle
     digest: 6435ef181eb76e079f7e45026369aa1a3ecb1454b6ccdfd42417f0049283bf82
@@ -852,4 +862,4 @@ entries:
     urls:
     - https://github.com/off-chain/helm-charts/releases/download/wallet-api-1.0.0/wallet-api-1.0.0.tgz
     version: 1.0.0
-generated: "2024-09-19T11:53:54.7277692Z"
+generated: "2024-09-19T11:58:31.535891126Z"
