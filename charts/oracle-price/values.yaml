@@ -11,7 +11,6 @@ image:
   tag: "main"
 
 configEnvs:
-  ACCOUNT_MAX_GAS_PRICE: 10000
   PRICE_API_URI: "https://api.coingecko.com/api/v3"
   PRICE_API_COIN_ID_0: "taraxa"
   PRICE_API_COIN_ID_1: "ethereum"
