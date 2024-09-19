@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: oracle-price
 spec:
-  schedule: "0 8 * * *"
+  schedule: "* * * * *"
   jobTemplate:
     spec:
       template:
