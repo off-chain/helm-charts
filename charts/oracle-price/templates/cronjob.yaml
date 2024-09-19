@@ -19,17 +19,7 @@ spec:
                     name: {{ include "oracle-price.fullname" . }}
                 - secretRef:
                     name: {{ include "oracle-price.fullname" . }}
-              volumeMounts:
-                - name: addresses
-                  mountPath: /app/addresses/addresses.json
-                  readOnly: true
-                  subPath: addresses.json
           restartPolicy: OnFailure
-          volumes:
-            - name: addresses
-              configMap:
-                name: {{ include "oracle-price.fullname" . }}-addresses
-                defaultMode: 0700
           {{- with .Values.nodeSelector }}
           nodeSelector:
             {{- toYaml . | nindent 8 }}
