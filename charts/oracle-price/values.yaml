@@ -17,10 +17,9 @@ configEnvs:
   PRICE_API_COIN_ID_1: "ethereum"
   PRICE_API_COIN_VS_CURRENCY: "usd"
   PRICE_API_TIMEOUT: 15
-  GAS_API_URI: "https://gas.api.infura.io"
-  GAS_API_NETWORK_ID: 1
+  GAS_API_URI: "https://api.etherscan.io"
   GAS_API_TIMEOUT: 15
-  RPC_ENDPOINT: "https://rpc.testnet.taraxa.io"
+  RPC_ENDPOINT: "https://rpc.mainnet.taraxa.io"
   CONTRACT_PRICE_ABI_FILE: "/app/src/Price.json"
   CONTRACT_PRICE_ADDRESS_0: ""
   CONTRACT_PRICE_ADDRESS_1: ""
@@ -35,8 +34,7 @@ secret:
 
 secretEnvs:
   ACCOUNT_PRIVATE_KEY: ""
-  GAS_API_USERNAME: ""
-  GAS_API_PASSWORD: ""
+  GAS_API_API_KEY: ""
 
 imagePullSecrets: []
 nameOverride: ""
