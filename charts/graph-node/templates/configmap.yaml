@@ -8,6 +8,8 @@ data:
   ETHEREUM_POLLING_INTERVAL: {{ .Values.graph.ethereumPollingInterval | quote }}
   EXPERIMENTAL_SUBGRAPH_VERSION_SWITCHING_MODE: {{ .Values.graph.experimentalSubgraphVersionSwitchingMode | quote }}
   ETHEREUM_BLOCK_BATCH_SIZE: {{ .Values.graph.ethereumBlockBatchSize | quote }}
+  GRAPH_ETHEREUM_BLOCK_INGESTOR_MAX_CONCURRENT_JSON_RPC_CALLS_FOR_TXN_RECEIPTS: {{ .Values.graph.ethereumBlockIngestorMaxConcurrentJsonRpcCallsForTxnReceipts | quote }}
+  GRAPH_ETHEREUM_FETCH_TXN_RECEIPTS_IN_BATCHES: {{ .Values.graph.ethereumFetchTxnReceiptsInBatches | quote }}
   GRAPH_ETHEREUM_MAX_BLOCK_RANGE_SIZE: {{ .Values.graph.graphEthereumMaxBlockRangeSize | quote }}
   STORE_CONNECTION_POOL_SIZE: {{ .Values.graph.storeConnectionPoolSize | quote }}
   GRAPH_LOG: {{ .Values.graph.graphLog | quote }}

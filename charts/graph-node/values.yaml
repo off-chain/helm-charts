@@ -35,7 +35,14 @@ graph:
   experimentalSubgraphVersionSwitchingMode: "synced"
   # Number of Ethereum blocks to request in parallel.
   # Also limits other parallel requests such such as trace_filter
-  ethereumBlockBatchSize: 250
+  ethereumBlockBatchSize: 10
+  # The maximum number of concurrent requests made against Ethereum for requesting transaction receipts
+  # during block ingestion. Defaults to 1,000.
+  ethereumBlockIngestorMaxConcurrentJsonRpcCallsForTxnReceipts: 10
+  # Set to true to disable fetching receipts from the Ethereum node concurrently during block ingestion.
+  # This will use fewer, batched requests.
+  # This is always set to true on MacOS to avoid DNS issues.
+  ethereumFetchTxnReceiptsInBatches: false
   # Maximum number of blocks to scan for triggers in each request
   graphEthereumMaxBlockRangeSize: 2000
   # How many simultaneous connections to allow to the store.
