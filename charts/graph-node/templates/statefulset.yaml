@@ -79,7 +79,7 @@ spec:
           volumeMounts:
             - name: start-script
               mountPath: /usr/local/bin/start_ws
-              key: start_ws
+              subPath: start_ws
           ports:
             - name: http
               containerPort: {{ .Values.service.ports.http }}
