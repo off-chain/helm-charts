@@ -47,6 +47,7 @@ spec:
       priorityClassName: {{ .Values.priorityClassName | quote }}
       containers:
         - name: {{ .Chart.Name }}
+          command: [ "start_ws" ]
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
@@ -75,6 +76,10 @@ spec:
                   key: {{ .Values.ipfs.secretKeys.url | default "ipfs_url" }}
             {{- end }}
           {{- end }}
+          volumeMounts:
+            - name: start-script
+              mountPath: /usr/local/bin/start_ws
+              key: start_ws
           ports:
             - name: http
               containerPort: {{ .Values.service.ports.http }}
@@ -93,3 +98,7 @@ spec:
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: start-script
+          configMap:
+            name: {{ include "common.names.fullname" . }}-start
