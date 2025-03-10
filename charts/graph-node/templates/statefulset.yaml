@@ -102,3 +102,4 @@ spec:
         - name: start-script
           configMap:
             name: {{ include "common.names.fullname" . }}-start
+            defaultMode: 0777
