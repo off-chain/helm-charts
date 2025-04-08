@@ -26,7 +26,6 @@ configEnvs:
   CONTRACT_GAS_ABI_FILE: "/app/src/Gas.json"
   CONTRACT_GAS_ADDRESS: ""
   GAS_DECIMALS: 18
-  TX_GAS_PRICE: 10000
   LOG_LEVEL: "INFO"
 
 secret:
