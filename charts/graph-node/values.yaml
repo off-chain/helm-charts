@@ -50,6 +50,7 @@ graph:
   storeConnectionPoolSize: 25
   graphAllowNonDeterministicIpfs: 1
   graphAllowNonDeterministicFulltextSearch: 1
+  graphEthereumCleanupBlocks: false
 
 serviceAccount:
   # Specifies whether a service account should be created
